@@ -1,18 +1,18 @@
 export const personalInfo = {
   name: "Sumukh Chhabra",
-  title: "Defense AI/ML Systems Engineer",
-  tagline: "AI systems built for mission-critical environments",
+  title: "AI Solutions Engineer",
+  tagline: "Building intelligent systems for real-world applications",
   email: "sumukhchhabra10@gmail.com",
   phone: "+91-9870229945",
   github: "https://github.com/sumukhx",
   linkedin: "https://www.linkedin.com/in/sumukh-chhabra-23829428a/",
   profileImage: "https://customer-assets.emergentagent.com/job_52bac923-9173-4545-928b-0b454b9e3e5f/artifacts/xqm666iy_IMG_4367.JPG",
-  resumeUrl: "https://customer-assets.emergentagent.com/job_52bac923-9173-4545-928b-0b454b9e3e5f/artifacts/mfa2votr_Resume_Sumukh_.pdf"
+  resumeUrl: "https://customer-assets.emergentagent.com/job_52bac923-9173-4545-928b-0b454b9e3e5f/artifacts/quarn3xm_Profile.pdf"
 };
 
 export const summary = {
-  title: "Origin Story",
-  content: "My journey into defense AI started with a simple facial detection system at WESEE. That first project opened doors to increasingly complex challenges: sonar mine detection for the Indian Navy, GPS-denied navigation systems at DRDO, and intelligence prediction platforms. Each system demanded not just technical precision, but reliability in field conditions where failure isn't an option. From detecting threats in underwater environments to predicting terror hotspots using multi-source intelligence, I've focused on building AI that works when it matters most."
+  title: "Overview",
+  content: "I am a passionate and driven Computer Science student at Bennett University, currently in my 2nd year. As Vice President of the Bennett Undergraduate Research Society (BURS), I actively lead and contribute to various initiatives. My internships have provided me with hands-on experience in AI development, where I've built advanced systems ranging from facial recognition and drone detection to GPS-denied navigation and underwater mine detection. I'm particularly skilled in Python programming, machine learning, and computer vision. I thrive in challenging environments and am always eager to apply my technical expertise to solve real-world problems."
 };
 
 export const capabilities = [
@@ -50,13 +50,42 @@ export const capabilities = [
 
 export const experiences = [
   {
+    id: "netweb-tech",
+    organization: "Netweb Technologies India Ltd",
+    location: "New Delhi, India",
+    role: "AI Solutions Intern (OEM Nvidia)",
+    ministry: "Technology",
+    dates: "Jan 2026 – Present",
+    status: "active",
+    context: "Working with NVIDIA OEM solutions to develop and implement AI-powered systems for enterprise applications.",
+    responsibilities: [
+      "Developing AI solutions leveraging NVIDIA's technology stack",
+      "Implementing machine learning models for real-world business applications",
+      "Collaborating with cross-functional teams on AI integration projects",
+      "Optimizing AI workflows for production deployment"
+    ],
+    constraints: [
+      "Enterprise-grade reliability requirements",
+      "Scalability and performance optimization",
+      "Integration with existing systems",
+      "Production deployment constraints"
+    ],
+    technologies: [
+      "NVIDIA AI Stack",
+      "Python",
+      "Machine Learning",
+      "Deep Learning"
+    ],
+    impact: "Contributing to enterprise AI solutions deployment and optimization using NVIDIA's cutting-edge technology."
+  },
+  {
     id: "drdo-cair",
     organization: "DRDO CAIR",
     location: "Bengaluru",
     role: "AI Development Intern",
     ministry: "Ministry of Defence",
     dates: "Jun 2025 – Aug 2025",
-    status: "active",
+    status: "completed",
     context: "Developed autonomous systems for GPS-denied operational environments where traditional navigation fails.",
     responsibilities: [
       "Developed AI-based navigation and surveillance modules for GPS-denied environments",
