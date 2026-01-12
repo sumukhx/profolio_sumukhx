@@ -3,9 +3,28 @@ import { personalInfo, education } from '../data/portfolio';
 import { Mail, Phone, Github, Linkedin, Download, GraduationCap, MapPin } from 'lucide-react';
 
 export const Contact = ({ isConsoleMode }) => {
-  const handleCopy = (text, label) => {
-    navigator.clipboard.writeText(text);
-    // You could add a toast notification here
+  const handleCopy = async (text, label) => {
+    try {
+      // Try modern clipboard API first
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        // Fallback for older browsers or non-secure contexts
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+      }
+    } catch (err) {
+      console.warn('Copy failed:', err);
+      // Silently fail - user can manually copy if needed
+    }
   };
 
   return (

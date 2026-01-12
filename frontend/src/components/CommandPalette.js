@@ -11,7 +11,7 @@ export const CommandPalette = ({ isOpen, onClose, onConsoleToggle }) => {
     cmd.label.toLowerCase().includes(search.toLowerCase())
   );
 
-  const handleCommand = useCallback((command) => {
+  const handleCommand = useCallback(async (command) => {
     switch (command.action) {
       case 'navigate':
         const element = document.getElementById(command.target);
@@ -23,7 +23,27 @@ export const CommandPalette = ({ isOpen, onClose, onConsoleToggle }) => {
         window.open(command.target, '_blank');
         break;
       case 'copy':
-        navigator.clipboard.writeText(command.target);
+        try {
+          // Try modern clipboard API first
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(command.target);
+          } else {
+            // Fallback for older browsers or non-secure contexts
+            const textArea = document.createElement('textarea');
+            textArea.value = command.target;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+          }
+        } catch (err) {
+          console.warn('Copy failed:', err);
+          // Silently fail - user can manually copy if needed
+        }
         break;
       case 'toggle':
         if (command.target === 'console') {
