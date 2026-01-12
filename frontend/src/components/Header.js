@@ -14,7 +14,7 @@ export const Header = ({ onCommandPaletteOpen }) => {
             </div>
             <div className="hidden sm:block">
               <div className="text-sm font-semibold text-foreground">{personalInfo.name}</div>
-              <div className="text-xs text-muted-foreground mono">DEFENSE_AI_SYS</div>
+              <div className="text-xs text-muted-foreground mono">AI_SOLUTIONS</div>
             </div>
           </div>
 

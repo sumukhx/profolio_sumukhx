@@ -20,13 +20,13 @@ export const Experience = ({ isConsoleMode }) => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full mb-4">
             <Briefcase className="w-3 h-3 text-primary" />
-            <span className="text-xs mono text-primary font-medium">MISSION_LOGS</span>
+            <span className="text-xs mono text-primary font-medium">WORK_EXPERIENCE</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Defense Experience
+            Professional Experience
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Field deployments and research across Indian defense agencies
+            Internships and projects across AI development and implementation
           </p>
         </div>
 
