@@ -1,52 +1,87 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import React, { useState, useEffect, useCallback } from 'react';
+import { Header } from './components/Header';
+import { Hero } from './components/Hero';
+import { OriginStory } from './components/OriginStory';
+import { Capabilities } from './components/Capabilities';
+import { Experience } from './components/Experience';
+import { Projects } from './components/Projects';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { CommandPalette } from './components/CommandPalette';
+import { ConsoleToggle } from './components/ConsoleToggle';
+import { Toaster } from './components/ui/sonner';
+import './App.css';
 
 function App() {
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [isConsoleMode, setIsConsoleMode] = useState(false);
+
+  // Command palette keyboard shortcut
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      // Ctrl+K or Cmd+K or /
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsCommandPaletteOpen(true);
+      } else if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+        e.preventDefault();
+        setIsCommandPaletteOpen(true);
+      } else if (e.key === 'Escape') {
+        setIsCommandPaletteOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Toggle console mode
+  const handleConsoleToggle = useCallback(() => {
+    setIsConsoleMode(prev => !prev);
+  }, []);
+
+  // Apply console mode class to body
+  useEffect(() => {
+    if (isConsoleMode) {
+      document.body.classList.add('console-mode');
+    } else {
+      document.body.classList.remove('console-mode');
+    }
+  }, [isConsoleMode]);
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <Header onCommandPaletteOpen={() => setIsCommandPaletteOpen(true)} />
+
+      {/* Main content */}
+      <main>
+        <Hero isConsoleMode={isConsoleMode} />
+        <OriginStory isConsoleMode={isConsoleMode} />
+        <Capabilities isConsoleMode={isConsoleMode} />
+        <Experience isConsoleMode={isConsoleMode} />
+        <Projects isConsoleMode={isConsoleMode} />
+        <Contact isConsoleMode={isConsoleMode} />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Command Palette */}
+      <CommandPalette
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
+        onConsoleToggle={handleConsoleToggle}
+      />
+
+      {/* Console Mode Toggle */}
+      <ConsoleToggle
+        isConsoleMode={isConsoleMode}
+        onToggle={handleConsoleToggle}
+      />
+
+      {/* Toast notifications */}
+      <Toaster />
     </div>
   );
 }
