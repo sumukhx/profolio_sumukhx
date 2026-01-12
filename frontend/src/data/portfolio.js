@@ -400,8 +400,38 @@ export const education = {
   degree: "B.Tech in Computer Science",
   institution: "Bennett University",
   duration: "2023 – 2027",
-  focus: "AI/ML Systems with Defense Applications"
+  focus: "AI/ML Systems with Real-world Applications"
 };
+
+export const leadership = [
+  {
+    id: "burs-vp",
+    title: "Vice President",
+    organization: "Bennett Undergraduate Research Society (BURS)",
+    dates: "2024 – Present",
+    responsibilities: [
+      "Led initiatives to strengthen the undergraduate research ecosystem at Bennett University",
+      "Played a key leadership role in organizing ResCon 4.0, the flagship research conclave of BURS",
+      "Oversaw planning and execution of research competitions, workshops, and speaker sessions",
+      "Coordinated with faculty mentors, external speakers, and student research teams",
+      "Ensured academic quality, structured evaluation, and smooth event operations",
+      "Mentored junior members in research documentation, presentations, and project structuring"
+    ]
+  },
+  {
+    id: "cabinet-gs",
+    title: "General Secretary",
+    organization: "Student Cabinet",
+    dates: "2024 – Present",
+    responsibilities: [
+      "Represented the student body in academic and administrative coordination",
+      "Assisted in organizing university-level academic, technical, and cultural initiatives",
+      "Coordinated with multiple student societies for inter-club collaboration",
+      "Managed communication, scheduling, and operational logistics for student-led programs",
+      "Contributed to policy-level discussions and student representation forums"
+    ]
+  }
+];
 
 export const commandPaletteCommands = [
   { id: "experience", label: "Go to Experience", action: "navigate", target: "experience" },
