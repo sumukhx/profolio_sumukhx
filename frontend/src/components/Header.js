@@ -21,13 +21,16 @@ export const Header = ({ onCommandPaletteOpen }) => {
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <a href="#origin" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Origin
+              Overview
             </a>
             <a href="#capabilities" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Capabilities
             </a>
             <a href="#experience" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Experience
+            </a>
+            <a href="#leadership" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Leadership
             </a>
             <a href="#projects" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Projects

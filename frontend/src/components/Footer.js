@@ -30,13 +30,16 @@ export const Footer = () => {
             <h4 className="text-sm mono text-primary font-semibold mb-4 uppercase">Navigation</h4>
             <nav className="space-y-2">
               <a href="#origin" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
-                Origin Story
+                Overview
               </a>
               <a href="#capabilities" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Capabilities
               </a>
               <a href="#experience" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Experience
+              </a>
+              <a href="#leadership" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Leadership
               </a>
               <a href="#projects" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Projects

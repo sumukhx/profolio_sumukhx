@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { OriginStory } from './components/OriginStory';
 import { Capabilities } from './components/Capabilities';
 import { Experience } from './components/Experience';
+import { Leadership } from './components/Leadership';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -60,6 +61,7 @@ function App() {
         <OriginStory isConsoleMode={isConsoleMode} />
         <Capabilities isConsoleMode={isConsoleMode} />
         <Experience isConsoleMode={isConsoleMode} />
+        <Leadership isConsoleMode={isConsoleMode} />
         <Projects isConsoleMode={isConsoleMode} />
         <Contact isConsoleMode={isConsoleMode} />
       </main>
