@@ -100,6 +100,12 @@ export const Hero = ({ isConsoleMode }) => {
               >
                 Initiate Contact
               </a>
+              <a
+                href="#projects"
+                className="px-6 py-3 bg-card border-2 border-border text-foreground rounded-lg hover:border-primary/50 hover:bg-muted/50 transition-all font-medium"
+              >
+                View Projects
+              </a>
             </div>
           </div>
         </div>
