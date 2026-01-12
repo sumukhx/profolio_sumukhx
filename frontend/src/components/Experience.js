@@ -138,6 +138,11 @@ export const Experience = ({ isConsoleMode }) => {
                     <SheetTitle className="text-2xl text-foreground">
                       {selectedExperience.organization}
                     </SheetTitle>
+                    {selectedExperience.fullName && (
+                      <p className="text-xs text-muted-foreground mt-1 italic">
+                        {selectedExperience.fullName}
+                      </p>
+                    )}
                     <p className="text-sm text-muted-foreground mt-1">
                       {selectedExperience.role}
                     </p>
