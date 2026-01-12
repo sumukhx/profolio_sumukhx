@@ -42,7 +42,7 @@ export const Hero = ({ isConsoleMode }) => {
               {/* Coordinates */}
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1 bg-background border border-border rounded-full">
                 <MapPin className="w-3 h-3 text-muted-foreground" />
-                <span className="text-xs mono text-muted-foreground">28.45°N 77.50°E</span>
+                <span className="text-xs mono text-muted-foreground">28.6127° N, 77.2330° E</span>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ export const Hero = ({ isConsoleMode }) => {
             {/* Classification label */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full">
               <Crosshair className="w-3 h-3 text-primary" />
-              <span className="text-xs mono text-primary font-medium">DEFENSE_SYSTEMS_ENGINEER</span>
+              <span className="text-xs mono text-primary font-medium">AI_SOLUTIONS_ENGINEER</span>
             </div>
 
             {/* Name */}
@@ -73,12 +73,12 @@ export const Hero = ({ isConsoleMode }) => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-6">
               <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50 hover:border-primary/50 transition-all glow-tactical">
-                <div className="text-2xl font-bold text-primary mono">03</div>
-                <div className="text-xs text-muted-foreground mt-1">Defense Agencies</div>
+                <div className="text-2xl font-bold text-primary mono">04</div>
+                <div className="text-xs text-muted-foreground mt-1">Internships</div>
               </div>
               <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50 hover:border-primary/50 transition-all glow-tactical">
                 <div className="text-2xl font-bold text-primary mono">09</div>
-                <div className="text-xs text-muted-foreground mt-1">AI Systems</div>
+                <div className="text-xs text-muted-foreground mt-1">Projects</div>
               </div>
               <div className="text-center p-4 bg-card/50 rounded-lg border border-border/50 hover:border-primary/50 transition-all glow-tactical">
                 <div className="text-2xl font-bold text-primary mono">24+</div>
@@ -92,7 +92,7 @@ export const Hero = ({ isConsoleMode }) => {
                 href="#experience"
                 className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all glow-tactical font-medium"
               >
-                View Mission Logs
+                View Work Experience
               </a>
               <a
                 href="#contact"

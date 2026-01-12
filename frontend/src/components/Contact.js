@@ -47,7 +47,7 @@ export const Contact = ({ isConsoleMode }) => {
             Initiate Contact
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Available for defense AI consulting, research collaboration, and mission-critical projects
+            Available for AI consulting, research collaboration, and innovative projects
           </p>
         </div>
 

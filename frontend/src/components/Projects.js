@@ -32,7 +32,7 @@ export const Projects = ({ isConsoleMode }) => {
             Projects
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Field-tested AI systems for defense and strategic applications
+            AI systems for real-world applications and problem-solving
           </p>
         </div>
 

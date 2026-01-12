@@ -17,11 +17,11 @@ export const Footer = () => {
               </div>
               <div>
                 <div className="text-sm font-semibold text-foreground">{personalInfo.name}</div>
-                <div className="text-xs text-muted-foreground mono">DEFENSE_AI_SYS</div>
+                <div className="text-xs text-muted-foreground mono">AI_SOLUTIONS</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Building mission-critical AI systems for defense and strategic applications.
+              Building intelligent AI systems for real-world applications.
             </p>
           </div>
 

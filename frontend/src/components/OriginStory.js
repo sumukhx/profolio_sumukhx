@@ -36,16 +36,16 @@ export const OriginStory = ({ isConsoleMode }) => {
             {/* Journey highlights */}
             <div className="grid sm:grid-cols-3 gap-4 pt-6 border-t border-border/30">
               <div>
-                <div className="text-primary mono text-sm font-semibold mb-1">WESEE</div>
-                <div className="text-xs text-muted-foreground">Facial Detection → AIS Analytics</div>
-              </div>
-              <div>
-                <div className="text-primary mono text-sm font-semibold mb-1">Indian Navy</div>
-                <div className="text-xs text-muted-foreground">Sonar Mines → Combat Systems</div>
+                <div className="text-primary mono text-sm font-semibold mb-1">Netweb Tech</div>
+                <div className="text-xs text-muted-foreground">AI Solutions with NVIDIA</div>
               </div>
               <div>
                 <div className="text-primary mono text-sm font-semibold mb-1">DRDO CAIR</div>
                 <div className="text-xs text-muted-foreground">GPS-Denied → Autonomous Nav</div>
+              </div>
+              <div>
+                <div className="text-primary mono text-sm font-semibold mb-1">Indian Navy</div>
+                <div className="text-xs text-muted-foreground">Sonar Mines → Combat Systems</div>
               </div>
             </div>
           </div>
