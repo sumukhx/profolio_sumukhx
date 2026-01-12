@@ -102,7 +102,7 @@ export const Hero = ({ isConsoleMode }) => {
               </a>
               <a
                 href="#projects"
-                className="px-6 py-3 bg-card border-2 border-border text-foreground rounded-lg hover:border-primary/50 hover:bg-muted/50 transition-all font-medium"
+                className="px-6 py-3 bg-card border-2 border-primary text-foreground rounded-lg hover:bg-primary/10 transition-all font-medium"
               >
                 View Projects
               </a>
