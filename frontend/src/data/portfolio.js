@@ -12,7 +12,7 @@ export const personalInfo = {
 
 export const summary = {
   title: "Overview",
-  content: "I am a passionate and driven Computer Science student at Bennett University, currently in my 2nd year. As Vice President of the Bennett Undergraduate Research Society (BURS), I actively lead and contribute to various initiatives. My internships have provided me with hands-on experience in AI development, where I've built advanced systems ranging from facial recognition and drone detection to GPS-denied navigation and underwater mine detection. I'm particularly skilled in Python programming, machine learning, and computer vision. I thrive in challenging environments and am always eager to apply my technical expertise to solve real-world problems."
+  content: "I'm a builder first—AI, software, and systems are just the tools. I've worked on real-world ML and AI systems through internships in research-driven and production-oriented environments, where I built and debugged end-to-end pipelines rather than isolated models. My experience spans computer vision, data-driven automation, geospatial systems, and applied AI, with hands-on work in object detection, drone and video analytics, GPS-denied navigation, anomaly detection, and intelligent decision systems. I've delivered projects ranging from autonomous navigation and ISR-style analysis to crowd monitoring, satellite imagery workflows, and AI-powered assistants, often under constraints like noisy data, limited compute, and strict performance requirements. I'm comfortable moving from raw data to deployable prototypes, and I focus on understanding why systems fail, not just when they succeed. I value clarity, robustness, and execution over hype. I learn fast, question assumptions early, and build systems meant to survive real use—not demos. If you're building something real and need someone who can think deeply and execute cleanly, let's talk."
 };
 
 export const capabilities = [
@@ -52,7 +52,7 @@ export const experiences = [
   {
     id: "netweb-tech",
     organization: "Netweb Technologies India Ltd",
-    location: "New Delhi, India",
+    location: "Gurugram, India",
     role: "AI Solutions Intern (OEM Nvidia)",
     ministry: "Technology",
     dates: "Jan 2026 – Present",
@@ -81,7 +81,8 @@ export const experiences = [
   {
     id: "drdo-cair",
     organization: "DRDO CAIR",
-    location: "Bengaluru",
+    fullName: "Centre for Artificial Intelligence & Robotics, Defence Research and Development Organisation",
+    location: "Bengaluru, India",
     role: "AI Development Intern",
     ministry: "Ministry of Defence",
     dates: "Jun 2025 – Aug 2025",
@@ -109,7 +110,7 @@ export const experiences = [
   {
     id: "indian-navy",
     organization: "Indian Navy",
-    location: "Naval Command",
+    location: "New Delhi, India",
     role: "Machine Learning Intern",
     ministry: "Ministry of Defence",
     dates: "Dec 2024 – Jan 2025",
@@ -140,7 +141,8 @@ export const experiences = [
   {
     id: "wesee",
     organization: "WESEE",
-    location: "Defence Office",
+    fullName: "Weapons and Electronics Systems Engineering Establishment",
+    location: "New Delhi, India",
     role: "Data Science Intern",
     ministry: "Ministry of Defence",
     dates: "May 2024 – Jul 2024",
