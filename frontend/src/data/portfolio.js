@@ -169,21 +169,21 @@ export const experiences = [
 export const projects = [
   {
     id: "gps-denied-nav",
-    title: "AI-based Navigation & Surveillance in GPS-Denied Environments",
+    title: "AI-Based Navigation & Surveillance in GPS-Denied Environments",
     category: "Autonomous Systems",
     status: "Production",
-    objective: "Enable autonomous navigation and threat detection in environments where GPS is unavailable or compromised.",
-    description: "Built YOLOv5 + multi-modal fusion pipeline for detecting armed individuals and suspicious activity. Generated GIS-based situational awareness maps.",
+    objective: "Design an AI system for surveillance and navigation without GPS availability.",
+    description: "Implemented YOLOv5-based object detection integrated with contextual and sensor inputs. Applied multi-modal data fusion to maintain situational awareness under signal loss.",
     pipeline: {
-      inputs: ["Camera Feed", "LIDAR Data", "Inertial Sensors", "Map Data"],
+      inputs: ["Camera Feed", "Sensor Inputs", "Contextual Data", "Map Data"],
       model: "YOLOv5 + Multimodal Fusion",
-      outputs: ["Threat Detection", "Navigation Path", "GIS Map Updates"]
+      outputs: ["Object Detection", "Navigation Path", "GIS Maps"]
     },
     engineeringChoices: [
-      "Multimodal fusion for redundancy when single sensors fail",
+      "Multimodal data fusion to maintain situational awareness under signal loss",
       "YOLOv5 for real-time detection on edge hardware",
-      "GIS integration for tactical situational awareness",
-      "Kalman filtering for sensor fusion accuracy"
+      "GIS-based spatial intelligence maps for monitoring detected entities",
+      "Focused on robustness, fault tolerance, and deployment feasibility"
     ],
     technologies: ["YOLOv5", "Multimodal Fusion", "GIS", "Python"],
     links: {
@@ -194,48 +194,23 @@ export const projects = [
   },
   {
     id: "terror-prediction",
-    title: "AI-Powered ISR & Prediction System for Terror Activities",
+    title: "AI-Powered ISR & Terror Activity Prediction Platform",
     category: "Intelligence & Surveillance",
     status: "Research",
-    objective: "Predict high-risk zones for terror activities by fusing multiple intelligence sources.",
-    description: "Designed AI platform combining GTD, SATP, live news, and GIS layers to predict high-risk zones. Built hotspot detection and forecasting dashboards using NLP + ML.",
+    objective: "Build an Intelligence, Surveillance, and Reconnaissance (ISR) platform for threat analysis.",
+    description: "Integrated the Global Terrorism Database (GTD) with spatial and analytical layers. Combined historical data, open-source inputs, and GIS mapping for risk-zone forecasting.",
     pipeline: {
-      inputs: ["Global Terrorism Database", "SATP Data", "Live News APIs", "Historical Incidents"],
-      model: "NLP + ML Forecasting",
-      outputs: ["Hotspot Maps", "Risk Scores", "Predictive Alerts"]
+      inputs: ["Global Terrorism Database", "Historical Data", "Open-Source Inputs", "GIS Mapping"],
+      model: "Hotspot Detection + Risk Forecasting",
+      outputs: ["Threat Analysis", "Risk Zones", "Decision Support Dashboard"]
     },
     engineeringChoices: [
-      "Multi-source data fusion for comprehensive threat picture",
-      "NLP for extracting actionable intelligence from unstructured text",
-      "Temporal analysis for pattern recognition",
-      "GIS visualization for operational planning"
+      "Integrated GTD with spatial and analytical layers",
+      "Implemented hotspot detection and risk-zone forecasting dashboards",
+      "Designed as a decision-support system, not a black-box predictor",
+      "Combined multiple data sources for comprehensive analysis"
     ],
-    technologies: ["NLP", "ML Forecasting", "GIS", "Data Fusion"],
-    links: {
-      repo: null,
-      demo: null,
-      writeup: null
-    }
-  },
-  {
-    id: "underwater-mine",
-    title: "Underwater Mine Detection using Sonar Images",
-    category: "Naval Systems",
-    status: "Production",
-    objective: "Detect underwater mines from sonar imagery with high accuracy despite noise and distortion.",
-    description: "Applied ResNet-50 and VGG-16 for underwater mine detection. Achieved high-accuracy mine identification with annotated sonar data.",
-    pipeline: {
-      inputs: ["Sonar Images", "Annotated Dataset", "Environmental Metadata"],
-      model: "ResNet-50 / VGG-16",
-      outputs: ["Mine Classification", "Confidence Scores", "Location Data"]
-    },
-    engineeringChoices: [
-      "Ensemble of ResNet-50 and VGG-16 for robust detection",
-      "Data augmentation to handle varied sonar conditions",
-      "Threshold tuning to minimize false positives",
-      "Transfer learning from ImageNet with sonar-specific fine-tuning"
-    ],
-    technologies: ["ResNet-50", "VGG-16", "Sonar Processing", "Deep Learning"],
+    technologies: ["GTD", "GIS", "Data Fusion", "ML Forecasting"],
     links: {
       repo: null,
       demo: null,
@@ -244,21 +219,21 @@ export const projects = [
   },
   {
     id: "rail-kavach",
-    title: "Rail Kavach – Train Collision Prevention",
+    title: "Rail Kavach — AI-Based Train Collision Prevention System",
     category: "Safety Systems",
     status: "Prototype",
-    objective: "Prevent train collisions through automated detection and emergency braking.",
-    description: "Developed YOLO + VGG16 + ResNet + LIDAR-based detection and auto-stop mechanism. Improved accuracy through multimodal fusion and YOLOv5 dataset formatting.",
+    objective: "Develop an AI-driven collision prevention system for railway safety.",
+    description: "Integrated YOLO, VGG16, and ResNet for object detection and classification. Used LIDAR-based validation to confirm threats with auto-stop mechanism.",
     pipeline: {
-      inputs: ["Camera Feed", "LIDAR", "Track Sensors", "Speed Data"],
+      inputs: ["Camera Feed", "LIDAR Data", "Track Sensors", "Speed Data"],
       model: "YOLO + VGG16 + ResNet Ensemble",
-      outputs: ["Obstacle Detection", "Distance Estimation", "Brake Commands"]
+      outputs: ["Threat Detection", "Distance Estimation", "Auto-Stop Trigger"]
     },
     engineeringChoices: [
-      "Multimodal fusion combining vision and LIDAR for reliability",
-      "YOLOv5 formatting for optimized real-time inference",
-      "Fail-safe design with redundant detection pathways",
-      "Distance estimation for graduated braking response"
+      "Integrated YOLO, VGG16, and ResNet for multi-level detection",
+      "LIDAR-based validation to confirm threats",
+      "Implemented auto-stop mechanism triggered by verified detections",
+      "Focused on reducing false negatives through multimodal confirmation logic"
     ],
     technologies: ["YOLO", "VGG16", "ResNet", "LIDAR", "Python"],
     links: {
@@ -268,21 +243,46 @@ export const projects = [
     }
   },
   {
-    id: "hawk-module",
-    title: "H.A.W.K Module",
-    category: "Combat Management",
+    id: "underwater-mine",
+    title: "Underwater Mine Detection Using Sonar Images",
+    category: "Defense Systems",
     status: "Production",
-    objective: "Automate transcription and intent recognition for defense communication systems.",
-    description: "Integrated Whisper for accurate transcription. Automated defence-term intent matching using NLP.",
+    objective: "Build CNN-based classification systems for underwater mine detection from sonar imagery.",
+    description: "Implemented and evaluated ResNet-50 and VGG-16 on sonar datasets. Handled noisy, low-contrast sonar imagery with real-world artefacts.",
     pipeline: {
-      inputs: ["Audio Commands", "Defense Terminology Database"],
-      model: "Whisper STT + NLP Intent Matcher",
-      outputs: ["Transcriptions", "Command Classification", "CMS Integration"]
+      inputs: ["Sonar Images", "Annotated Dataset", "Environmental Data"],
+      model: "ResNet-50 / VGG-16",
+      outputs: ["Mine Classification", "Confidence Scores", "Location Data"]
     },
     engineeringChoices: [
-      "Whisper for robust speech recognition in noisy environments",
-      "Custom NLP model trained on defense terminology",
-      "Intent matching for automated CMS command execution",
+      "CNN-based approach for handling defense-grade, non-optical imaging data",
+      "Handled noisy, low-contrast sonar imagery with real-world artefacts",
+      "Prioritized detection reliability over benchmark accuracy",
+      "Evaluated multiple architectures (ResNet-50, VGG-16) for optimal performance"
+    ],
+    technologies: ["ResNet-50", "VGG-16", "Sonar Processing", "Deep Learning"],
+    links: {
+      repo: null,
+      demo: null,
+      writeup: null
+    }
+  },
+  {
+    id: "hawk-module",
+    title: "H.A.W.K Module — Combat Management System (CMS) Support",
+    category: "Defense Systems",
+    status: "Production",
+    objective: "Support intelligence workflows within a Combat Management System (CMS).",
+    description: "Integrated Whisper-based speech-to-text for defence communications. Implemented NLP-based defence-term intent matching and classification.",
+    pipeline: {
+      inputs: ["Audio Communications", "Defence Terminology Database"],
+      model: "Whisper STT + NLP Intent Matcher",
+      outputs: ["Transcriptions", "Intent Classification", "CMS Integration"]
+    },
+    engineeringChoices: [
+      "Whisper-based speech-to-text for defense communications",
+      "NLP-based defence-term intent matching and classification",
+      "Focused on explainability and controlled outputs for operational use",
       "Real-time processing with minimal latency"
     ],
     technologies: ["Whisper", "NLP", "Python", "CMS Integration"],
@@ -294,21 +294,21 @@ export const projects = [
   },
   {
     id: "meet-flash",
-    title: "MEET.FLASH",
+    title: "MEET.FLASH — Minutes in Minutes",
     category: "Automation",
     status: "Production",
-    objective: "Generate structured meeting summaries in real-time using STT and LLMs.",
-    description: "Built Whisper-based real-time transcription module. Designed Mini-LLM workflows for structured summaries with 'Minutes in Minutes' turnaround.",
+    objective: "Build a real-time transcription system for automated meeting documentation.",
+    description: "Built real-time transcription using Whisper. Designed LLM-based summarization workflows for structured meeting outputs.",
     pipeline: {
       inputs: ["Live Audio", "Speaker Metadata"],
-      model: "Whisper + Mini-LLM",
-      outputs: ["Transcripts", "Action Items", "Summary Documents"]
+      model: "Whisper + LLM Summarization",
+      outputs: ["Transcripts", "Structured Summaries", "Action Items"]
     },
     engineeringChoices: [
-      "Real-time Whisper transcription with speaker diarization",
-      "Mini-LLM for efficient on-device summarization",
-      "Structured output formatting for immediate distribution",
-      "Quality checks for accuracy before final delivery"
+      "Real-time transcription system using Whisper",
+      "LLM-based summarization workflows for structured outputs",
+      "Automated documentation for professional workflows",
+      "Focused on low latency and clarity of generated summaries"
     ],
     technologies: ["Whisper", "LLM", "Real-time Processing"],
     links: {
@@ -318,37 +318,12 @@ export const projects = [
     }
   },
   {
-    id: "dhandrishti",
-    title: "DhanDrishti Wallet",
-    category: "Accessibility",
-    status: "Prototype",
-    objective: "Enable visually impaired users to identify currency denominations independently.",
-    description: "Built OCR + CV system for banknote identification for the visually impaired. Added audio + haptic feedback output.",
-    pipeline: {
-      inputs: ["Camera Feed", "Banknote Images"],
-      model: "OCR + Computer Vision",
-      outputs: ["Denomination ID", "Audio Feedback", "Haptic Response"]
-    },
-    engineeringChoices: [
-      "Edge-based OCR for offline operation",
-      "Multi-angle detection for handling crumpled notes",
-      "Audio feedback with regional language support",
-      "Haptic patterns for discreet confirmation"
-    ],
-    technologies: ["OCR", "Computer Vision", "Audio Feedback", "Mobile Dev"],
-    links: {
-      repo: null,
-      demo: null,
-      writeup: null
-    }
-  },
-  {
     id: "facial-recognition",
-    title: "Facial Recognition System",
-    category: "Security Systems",
+    title: "Facial Recognition System — YOLOv5 + FaceNet",
+    category: "Computer Vision",
     status: "Production",
-    objective: "Deploy facial recognition for secure access control in defense facilities.",
-    description: "Built full facial recognition system integrating YOLO detection + FaceNet embeddings. Developed UI frontend using HTML/CSS.",
+    objective: "Develop a full facial recognition pipeline combining detection and embedding models.",
+    description: "Implemented identity matching using similarity thresholds. Built a simple UI frontend for visualization and interaction.",
     pipeline: {
       inputs: ["Camera Feed", "Known Face Database"],
       model: "YOLOv5 + FaceNet",
@@ -357,8 +332,8 @@ export const projects = [
     engineeringChoices: [
       "YOLOv5 for fast face detection preprocessing",
       "FaceNet embeddings for robust identification",
-      "Threshold tuning for security vs usability balance",
-      "Simple UI for operational ease"
+      "Implemented identity matching using similarity thresholds",
+      "Built UI frontend for visualization and strengthened understanding of feature embeddings"
     ],
     technologies: ["YOLOv5", "FaceNet", "HTML/CSS", "Python"],
     links: {
@@ -368,24 +343,49 @@ export const projects = [
     }
   },
   {
-    id: "reallyme",
-    title: "ReallyMe Voice Cloning",
-    category: "Audio ML",
-    status: "Research",
-    objective: "Clone voice characteristics with minimal training data for specialized applications.",
-    description: "Built deep-learning-based voice cloning model. Implemented speaker adaptation + optimized TTS inference.",
+    id: "dhandrishti",
+    title: "DhanDrishti Wallet — Assistive AI System",
+    category: "Accessibility",
+    status: "Prototype",
+    objective: "Enable visually impaired users to identify currency denominations independently.",
+    description: "Built OCR + computer vision system for banknote identification. Designed for visually impaired users with audio and haptic feedback.",
     pipeline: {
-      inputs: ["Speaker Audio Samples", "Target Text"],
-      model: "Deep Learning TTS",
-      outputs: ["Cloned Voice Output", "Audio Files"]
+      inputs: ["Camera Feed", "Banknote Images"],
+      model: "OCR + Computer Vision",
+      outputs: ["Denomination ID", "Audio Feedback", "Haptic Response"]
     },
     engineeringChoices: [
-      "Speaker adaptation for few-shot learning",
-      "Optimized inference for real-time generation",
-      "Quality metrics for naturalness assessment",
-      "Ethical constraints on usage scenarios"
+      "OCR + computer vision for banknote identification",
+      "Designed for visually impaired users with audio and haptic feedback",
+      "Focused on usability, accessibility, and reliability",
+      "Introduced human-centric design constraints into AI development"
     ],
-    technologies: ["Deep Learning", "TTS", "Audio Processing"],
+    technologies: ["OCR", "Computer Vision", "Audio Feedback", "Mobile Dev"],
+    links: {
+      repo: null,
+      demo: null,
+      writeup: null
+    }
+  },
+  {
+    id: "facial-detection",
+    title: "Facial Detection System — Foundational Project",
+    category: "Computer Vision",
+    status: "Completed",
+    objective: "Develop facial detection system for office environments and security automation.",
+    description: "Learned core computer vision pipelines and output processing. Observed direct real-world application in security and automation.",
+    pipeline: {
+      inputs: ["Camera Feed", "Office Environment"],
+      model: "Facial Detection CNN",
+      outputs: ["Face Detection", "Tracking", "Security Alerts"]
+    },
+    engineeringChoices: [
+      "Developed initial facial detection system for office environments",
+      "Learned core computer vision pipelines and output processing",
+      "Observed direct real-world application in security and automation",
+      "Sparked interest in applied AI systems"
+    ],
+    technologies: ["Computer Vision", "Python", "Deep Learning"],
     links: {
       repo: null,
       demo: null,
