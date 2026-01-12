@@ -1,115 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family:
-        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+@layer base {
+  :root {
+    /* Defense-grade tactical color system - HSL format */
+    --background: 0 0% 3%;
+    --foreground: 180 5% 90%;
+    
+    /* Cyan/Teal tactical accents (radar/sonar aesthetic) */
+    --primary: 185 100% 45%;
+    --primary-glow: 185 95% 55%;
+    --primary-dim: 185 80% 35%;
+    --primary-foreground: 0 0% 5%;
+    
+    --secondary: 180 20% 15%;
+    --secondary-foreground: 180 5% 90%;
+    
+    --accent: 174 72% 56%;
+    --accent-foreground: 0 0% 5%;
+    
+    /* Muted dark tones */
+    --muted: 180 10% 12%;
+    --muted-foreground: 180 5% 60%;
+    
+    --card: 180 10% 6%;
+    --card-foreground: 180 5% 90%;
+    
+    --popover: 180 15% 8%;
+    --popover-foreground: 180 5% 90%;
+    
+    /* UI States */
+    --border: 180 20% 20%;
+    --input: 180 20% 20%;
+    --ring: 185 100% 45%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --success: 142 76% 45%;
+    --warning: 38 92% 50%;
+    
+    /* Tactical shadows and glows */
+    --shadow-tactical: 0 0 20px hsl(185 100% 45% / 0.15);
+    --shadow-glow: 0 0 40px hsl(185 95% 55% / 0.25);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.5);
+    
+    /* Grid and tactical overlays */
+    --grid-color: hsl(185 100% 45% / 0.08);
+    --scan-line: hsl(185 100% 45% / 0.05);
+    
+    /* Transitions */
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-tactical: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    --radius: 0.5rem;
+  }
 }
 
 @layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
-        --radius: 0.5rem;
-    }
-    .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
-    }
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01', 'ss02', 'cv01', 'cv03';
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  code, pre, .mono {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-feature-settings: 'zero', 'ss02';
+  }
 }
 
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
+/* Tactical grid background */
+.tactical-grid {
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
 }
 
-@layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
+/* Console mode enhancements */
+.console-mode .tactical-grid {
+  animation: gridPulse 8s ease-in-out infinite;
+}
 
-    [data-debug-wrapper="true"] > * {
-        margin-left: inherit;
-        margin-right: inherit;
-        margin-top: inherit;
-        margin-bottom: inherit;
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-        column-gap: inherit;
-        row-gap: inherit;
-        gap: inherit;
-        border-left-width: inherit;
-        border-right-width: inherit;
-        border-top-width: inherit;
-        border-bottom-width: inherit;
-        border-left-style: inherit;
-        border-right-style: inherit;
-        border-top-style: inherit;
-        border-bottom-style: inherit;
-        border-left-color: inherit;
-        border-right-color: inherit;
-        border-top-color: inherit;
-        border-bottom-color: inherit;
-    }
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* Scan line effect */
+.scan-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--scan-line) 50%,
+    transparent 100%
+  );
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Tactical glow effects */
+.glow-tactical {
+  box-shadow: var(--shadow-tactical);
+  transition: box-shadow var(--transition-smooth);
+}
+
+.glow-tactical:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Radar sweep animation */
+.radar-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.radar-sweep::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    hsl(185 100% 45% / 0.15) 45deg,
+    transparent 90deg
+  );
+  animation: radarSpin 6s linear infinite;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+@keyframes radarSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Data stream effect */
+.data-stream {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream::after {
+  content: '01010010110101000101001011';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  color: hsl(185 100% 45% / 0.1);
+  letter-spacing: 2px;
+  animation: dataFlow 8s linear infinite;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@keyframes dataFlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Tactical frame for images */
+.tactical-frame {
+  position: relative;
+  border: 2px solid hsl(var(--primary));
+  box-shadow: 
+    0 0 0 4px hsl(var(--background)),
+    0 0 0 6px hsl(var(--border)),
+    inset 0 0 20px hsl(185 100% 45% / 0.1),
+    var(--shadow-glow);
+}
+
+.tactical-frame::before,
+.tactical-frame::after {
+  content: '';
+  position: absolute;
+  border: 1px solid hsl(var(--primary));
+}
+
+.tactical-frame::before {
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+}
+
+.tactical-frame::after {
+  top: -12px;
+  left: 50%;
+  width: 80px;
+  height: 2px;
+  background: hsl(var(--primary));
+  transform: translateX(-50%);
+}
+
+/* Corner brackets for tactical UI */
+.corner-brackets {
+  position: relative;
+}
+
+.corner-brackets::before,
+.corner-brackets::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid hsl(var(--primary));
+}
+
+.corner-brackets::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-brackets::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-dim));
+}
+
+/* Selection styling */
+::selection {
+  background: hsl(var(--primary) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* Focus visible states */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scan-line::after,
+  .radar-sweep::before,
+  .data-stream::after {
+    display: none;
+  }
+}
+
+/* Utility classes */
+.text-gradient-tactical {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient-tactical {
+  border-image: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  ) 1;
+}
+
+/* Command palette animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Pulse animation for active elements */
+@keyframes pulse-tactical {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-tactical {
+  animation: pulse-tactical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Mission log drawer transitions */
+.drawer-enter {
+  transform: translateX(100%);
+}
+
+.drawer-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.drawer-exit {
+  transform: translateX(0);
+}
+
+.drawer-exit-active {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in;
 }
